@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is my capstone project.
+This is my capstone project. It is being developed as part of my learning journey in software development.
 
 ## Tech Stack
 
@@ -10,6 +10,12 @@ This is my capstone project.
 - JavaScript
 - HTML
 - CSS
+
+## Goals
+
+- Build a functional capstone project
+- Follow clean coding practices
+- Learn professional Git and GitHub workflows
 
 ## Status
 
