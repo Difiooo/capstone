@@ -1,0 +1,12 @@
+{
+  "name": "capstone-settings-form",
+  "version": "1.0.0",
+  "description": "A beautiful modern settings form built with custom CSS, HTML, and JS, served by a zero-dependency Node.js server.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

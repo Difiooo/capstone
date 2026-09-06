@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile Settings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        <h1>Profile Settings</h1>
+      </div>
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+        <!-- Moon Icon -->
+        <svg id="theme-icon-dark" class="theme-icon hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <!-- Sun Icon -->
+        <svg id="theme-icon-light" class="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="app-container">
+    <div class="grid-layout">
+      <!-- Left: Settings Form Section -->
+      <section class="card settings-section">
+        <div class="card-header">
+          <h2>Update Settings</h2>
+          <p class="subtitle">Modify your account settings and see modifications in real-time.</p>
+        </div>
+        
+        <form id="settings-form" novalidate>
+          <!-- Username Input Group -->
+          <div class="input-group">
+            <label for="username">
+              Username
+              <span class="required">*</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-icon">@</span>
+              <input 
+                type="text" 
+                id="username" 
+                name="username" 
+                placeholder="johndoe" 
+                autocomplete="username"
+                required
+                aria-describedby="username-helper username-error"
+              >
+            </div>
+            <span class="error-message" id="username-error" aria-live="polite"></span>
+            <span class="helper-text" id="username-helper">Must be 3-15 characters. Letters, numbers, and underscores only.</span>
+          </div>
+
+          <!-- Email Input Group -->
+          <div class="input-group">
+            <label for="email">
+              Email Address
+              <span class="required">*</span>
+            </label>
+            <div class="input-wrapper">
+              <svg class="input-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="john.doe@example.com" 
+                autocomplete="email"
+                required
+                aria-describedby="email-helper email-error"
+              >
+            </div>
+            <span class="error-message" id="email-error" aria-live="polite"></span>
+            <span class="helper-text" id="email-helper">Please enter a valid email address (e.g., name@domain.com).</span>
+          </div>
+
+          <!-- Age Input Group -->
+          <div class="input-group">
+            <label for="age">
+              Age
+              <span class="required">*</span>
+            </label>
+            <div class="input-wrapper">
+              <svg class="input-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <input 
+                type="number" 
+                id="age" 
+                name="age" 
+                placeholder="25" 
+                min="1" 
+                max="120"
+                required
+                aria-describedby="age-helper age-error"
+              >
+            </div>
+            <span class="error-message" id="age-error" aria-live="polite"></span>
+            <span class="helper-text" id="age-helper">Must be a whole number between 1 and 120.</span>
+          </div>
+
+          <!-- Form Actions -->
+          <div class="form-actions">
+            <button type="button" id="reset-btn" class="btn btn-secondary">
+              Reset Form
+            </button>
+            <button type="submit" id="submit-btn" class="btn btn-primary">
+              Save Changes
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Right: Live Preview Card -->
+      <section class="card preview-section">
+        <div class="card-header">
+          <h2>Live Preview</h2>
+          <p class="subtitle">How others see you across the platform.</p>
+        </div>
+        
+        <div class="profile-card">
+          <div class="profile-card-header">
+            <!-- Decorative Banner -->
+            <div class="profile-banner"></div>
+            <!-- Avatar Container -->
+            <div class="profile-avatar-container">
+              <div class="profile-avatar" id="preview-avatar">
+                <!-- SVG Avatar -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="avatar-svg">
+                  <circle cx="50" cy="50" r="48" fill="var(--avatar-bg)" stroke="var(--card-bg)" stroke-width="4" />
+                  <circle cx="50" cy="40" r="20" fill="var(--avatar-fg)" />
+                  <path d="M20 80c0-15 15-20 30-20s30 5 30 20Z" fill="var(--avatar-fg)" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <div class="profile-card-body">
+            <h3 id="preview-username-heading">@johndoe</h3>
+            <p id="preview-email-heading" class="profile-email">john.doe@example.com</p>
+            
+            <div class="profile-badge-container">
+              <span class="profile-badge badge-age">
+                <span class="badge-label">Age</span>
+                <span id="preview-age-heading" class="badge-value">25</span>
+              </span>
+              <span id="preview-status-badge" class="profile-badge badge-status">
+                <span class="badge-dot"></span>
+                Saved
+              </span>
+            </div>
+          </div>
+          
+          <div class="profile-card-footer">
+            <div class="sync-status">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sync-icon"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+              <span id="sync-text">Synchronized with LocalStorage</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="assertive"></div>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 Capstone Project &bull; Created with modern Vanilla Web Technologies</p>
+  </footer>
+
+  <script src="validation.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
